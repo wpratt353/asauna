@@ -1,13 +1,9 @@
 import React from 'react'
 
-import {} from "./style"
+import {} from './style'
 
 const Wrapper = () => {
-    return (
-        <div>
-            Wrapper
-        </div>
-    )
+  return <div>Wrapper</div>
 }
 
 export default Wrapper
