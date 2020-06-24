@@ -32,6 +32,12 @@ export const MobileCol = styled(Col)`
     display: inline;
     margin-right: 30px;
   }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    div {
+      margin: 0 20px;
+    }
+  }
 `
 
 export const FormWrap = styled.form`
