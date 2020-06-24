@@ -15,7 +15,7 @@ const Header = () => {
         <Headroom open={open} setOpen={setOpen}>
           <HeaderWrap fluid>
             <StyledRow>
-              <Logo />
+              <Logo open={open} setOpen={setOpen} />
               <Nav />
               <Account open={open} setOpen={setOpen} />
             </StyledRow>

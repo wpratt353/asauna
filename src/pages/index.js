@@ -21,8 +21,7 @@ const IndexPage = () => {
     <div>
       <SEO title="Home" />
       <Header />
-      <Hero />
-      <Banner />
+      <div style={{height: '1000px', backgroundColor: '#fff', position: 'relative', zIndex: '1'}}>test</div>
       {/* <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
         Hi
       </h1> */}

@@ -126,7 +126,7 @@ const GlobalStyle = createGlobalStyle`
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 999 !important;
   }
   .headroom--unfixed {
     position: relative;
@@ -141,6 +141,7 @@ const GlobalStyle = createGlobalStyle`
   }
   .headroom--pinned {
     position: fixed;
+    z-index: 999 !important;
     transform: translateY(0%);
   }
 
