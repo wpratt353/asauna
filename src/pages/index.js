@@ -1,22 +1,32 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect } from 'react'
+// import locomotiveScroll from "locomotive-scroll"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import SEO from '../helpers/seo'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import Banner from '../components/Banner'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+const IndexPage = () => {
+  // const scrollRef = React.createRef()
+
+  // useEffect(() => {
+  //   const scroll = new locomotiveScroll({
+  //     el: scrollRef.current,
+  //     smooth: true,
+  //   })
+  // })
+
+  return (
+    // <div className="scroll" ref={scrollRef}>
+    <div>
+      <SEO title="Home" />
+      <Header />
+      <div style={{height: '1000px', backgroundColor: '#fff', position: 'relative', zIndex: '1'}}>test</div>
+      {/* <h1 data-scroll data-scroll-speed="3" data-scroll-position="top">
+        Hi
+      </h1> */}
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+  )
+}
 
 export default IndexPage
