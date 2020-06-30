@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col'
 
 export const FooterWrap = styled(Container)`
   position: relative;
+  display: none;
   max-width: 100vw;
   padding: 4rem 4rem 4rem 8rem;
   background-color: ${(props) => props.theme.colors.smoke};

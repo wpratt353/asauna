@@ -68,7 +68,7 @@ export const StyledLink = styled(Link)`
     font-size: 0.8rem;
 
     div {
-        color: ${({ open }) => (open ? '#fff' : '#fff')};
+        color: ${({ open }) => (open ? '#111' : '#fff')};
         transition: 0.5s color ease-in-out 0.2s;
         font-size: 0.9rem !important;
     }

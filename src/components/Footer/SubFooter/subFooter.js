@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import { FooterWrap, StyledCol } from './style'
 
@@ -7,7 +8,7 @@ const SubFooter = () => {
     <FooterWrap>
       <StyledCol md={4}>
         <h3>
-          <a href="#">Secure Payment</a>
+          <Link to="/">Secure Payment</Link>
         </h3>
 
         <p>
@@ -16,14 +17,14 @@ const SubFooter = () => {
       </StyledCol>
       <StyledCol md={4}>
         <h3>
-          <a href="#">Delivery</a>
+          <Link to="/">Delivery</Link>
         </h3>
 
         <p>Home Delivery on Your Schedule</p>
       </StyledCol>
       <StyledCol md={4}>
         <h3>
-          <a href="#">Customer Service</a>
+          <Link to="/">Customer Service</Link>
         </h3>
 
         <p>

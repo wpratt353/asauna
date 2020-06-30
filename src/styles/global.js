@@ -60,6 +60,11 @@ const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => theme.colors.green};
       text-decoration: none;
     }
+
+    :focus {
+      outline: none;
+      border: none;
+    }
   }
 
   @media screen and (min-width: 35em) {
@@ -121,30 +126,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  /* react-headroom */
-  .headroom {
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999 !important;
-  }
-  .headroom--unfixed {
-    position: relative;
-    transform: translateY(0);
-  }
-  .headroom--scrolled {
-    transition: transform 200ms ease-in-out;
-  }
-  .headroom--unpinned {
-    position: fixed;
-    transform: translateY(-100%);
-  }
-  .headroom--pinned {
-    position: fixed;
-    z-index: 999 !important;
-    transform: translateY(0%);
-  }
-
   /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
   html.has-scroll-smooth {
     overflow: hidden; 
@@ -190,6 +171,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 2px;
     cursor: -webkit-grab;
     cursor: grab;
+    z-index: 99999;
   }
   .has-scroll-dragging .c-scrollbar_thumb {
     cursor: -webkit-grabbing;

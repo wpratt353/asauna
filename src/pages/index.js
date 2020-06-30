@@ -1,27 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import locomotiveScroll from 'locomotive-scroll'
 
 import SEO from '../helpers/seo'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import Featured from '../components/Product/Featured'
 
 const IndexPage = ({ data }) => {
-  return (
-    <div>
-      <SEO title="Home" />
-      <Header />
-      <Hero />
-      <div
-        style={{
-          height: '1000px',
-          backgroundColor: '#fff',
-          position: 'relative',
-          zIndex: '1',
-        }}
-      >
-        test
-      </div>
-    </div>
-  )
+    const scrollRef = React.createRef()
+    useEffect(() => {
+      const scroll = new locomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+      })
+    })
+
+    return (
+      <>
+        <SEO title="Home" />
+        <Header />
+        <div className="scroll" ref={scrollRef}>
+          <Hero />
+          <Featured />
+        </div>
+      </>
+    )
 }
 
 export default IndexPage
