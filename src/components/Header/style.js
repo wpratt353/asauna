@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 
 export const HeaderWrap = styled(Container)`
     position: relative;
-    top: 10px;
+    top: 25px;
 `
 export const StyledRow = styled(Row)`
     align-items: center;

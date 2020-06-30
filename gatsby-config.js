@@ -39,9 +39,10 @@ module.exports = {
       options: {
         fonts: [
           `alice\:400,400i,`,
-          `montserrat\:400,400i,600,800`,
+          `montserrat\:100,400,400i,600,800`,
+          `italiana\:400,600,800`,
         ],
-        display: "swap",
+        display: 'swap',
       },
     },
   ],
