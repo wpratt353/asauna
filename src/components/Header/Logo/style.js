@@ -16,7 +16,7 @@ export const StyledLogo = styled.h1`
 export const StyledLink = styled(Link)`
     transition: 0.5s color ease-in-out 0.2s;
     position: relative;
-    color: ${({ open }) => (open ? '#fff' : '#fff')};
+    color: ${({ open }) => (open ? '#111' : '#fff')};
 
     ::after {
         content: ' ';

@@ -1,26 +1,36 @@
 import React, { useState } from 'react'
-import Headroom from 'react-headroom'
 
 import Logo from './Logo'
 import Nav from './Nav'
 import Account from './Account'
 import Drawer from './Drawer'
-import { HeaderWrap, StyledRow } from "./style"
+import { HeaderWrap, Animation, StyledRow } from './style'
 
 const Header = () => {
     const [open, setOpen] = useState(false)
 
     return (
       <>
-        <Headroom open={open} setOpen={setOpen}>
-          <HeaderWrap fluid>
+        <HeaderWrap fluid>
+          <Animation
+            animate={{
+              opacity: ['0%', '100%'],
+            }}
+            transition={{
+              delay: 1.9,
+              duration: 0.7,
+              ease: 'easeInOut',
+              times: [0, 1],
+              loop: false,
+            }}
+          >
             <StyledRow>
               <Logo open={open} setOpen={setOpen} />
               <Nav />
               <Account open={open} setOpen={setOpen} />
             </StyledRow>
-          </HeaderWrap>
-        </Headroom>
+          </Animation>
+        </HeaderWrap>
 
         <Drawer open={open} setOpen={setOpen} />
       </>

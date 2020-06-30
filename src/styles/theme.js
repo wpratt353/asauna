@@ -12,6 +12,13 @@ const theme = {
     sans: '"Montserrat", sans-serif',
     serif: '"Alice", serif',
   },
+  fontSize: {
+    xlarge: '3rem',
+    large: '4rem',
+    medium: '2rem',
+    small: '1.5rem',
+    xsmall: '0.9rem',
+  },
   sizes: {
     maxWidth: '90vw',
     maxWidthCentered: '70vw',

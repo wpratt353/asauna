@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Row from 'react-bootstrap/Row'
 import SimpleLineIcon from 'react-simple-line-icons'
 
@@ -18,64 +19,64 @@ const Footer = () => {
         <NoMobile md={3}>
           <h3>Help</h3>
           <ul>
-            <a href="#">
+            <Link to="/">
               <li>Write us</li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/">
               <li>EMAIL_ADDRESS</li>
-            </a>
+            </Link>
           </ul>
           <ul>
-            <a href="#">
+            <Link to="/">
               <li>Terms of sale</li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/">
               <li>FAQ</li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/">
               <li>Shipping</li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/">
               <li>My account</li>
-            </a>
+            </Link>
           </ul>
         </NoMobile>
         <NoMobile md={3}>
           <h3>About</h3>
           <ul>
-            <a href="#">
+            <Link to="/">
               <li>The Brand</li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/">
               <li>Designer</li>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/">
               <li>Terms & Conditions</li>
-            </a>
+            </Link>
           </ul>
         </NoMobile>
         <NoMobile md={3}>
           <h3>Address</h3>
           <ul>
-            <a href="">
+            <Link to="/">
               <li>Store locator</li>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/">
               <li>Login to the reseller area</li>
-            </a>
+            </Link>
           </ul>
         </NoMobile>
         <MobileCol s={12} md={3}>
           <h3>Follow us</h3>
-          <a href="#">
+          <Link to="/">
             <SimpleLineIcon name="social-instagram" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="/">
             <SimpleLineIcon name="social-facebook" />
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="/">
             <SimpleLineIcon name="social-pinterest" />
-          </a>
+          </Link>
           <FormWrap>
             <h3>Newsletter</h3>
             <Email type="email" placeholder="E-mail" />

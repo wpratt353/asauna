@@ -1,10 +1,23 @@
 import React from 'react'
 import { bool } from 'prop-types'
 
-import { StyledDrawer } from "./style"
+import links from '../../../constants/links'
+import { StyledDrawer, StyledUl, StyledLink } from './style'
 
 const Drawer = ({ open }) => {
-  return <StyledDrawer open={open}>Drawer</StyledDrawer>
+  return (
+    <StyledDrawer open={open}>
+      <StyledUl>
+        {links.map((link, index) => {
+          return (
+            <li key={index}>
+              <StyledLink to={link.path}>{link.text}</StyledLink>
+            </li>
+          )
+        })}
+      </StyledUl>
+    </StyledDrawer>
+  )
 }
 
 Drawer.propTypes = {

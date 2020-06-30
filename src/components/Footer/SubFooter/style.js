@@ -7,6 +7,7 @@ export const FooterWrap = styled(Row)`
   position: relative;
   max-width: 100vw;
   padding: 80px 0;
+  display: none;
 
   h3 {
     font-size: 13px;
