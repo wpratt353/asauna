@@ -1,13 +1,13 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
 
-import { StyledLogo } from "./style"
+import { StyledLogo, StyledLink } from "./style"
 
 const Logo = ({ open, setOpen }) => {
   return (
     <Col xs={6} lg={3}>
       <StyledLogo open={open} setOpen={setOpen}>
-        Red Alder
+        <StyledLink to="/">RedAlder</StyledLink>
       </StyledLogo>
     </Col>
   )

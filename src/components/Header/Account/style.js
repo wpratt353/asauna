@@ -10,6 +10,10 @@ export const StyledAccount = styled(Col)`
         justify-content: flex-end;
         align-items: center;
 
+        @media screen and (min-width: ${props => props.theme.responsive.medium}) {
+            margin-right: 20px;
+        }
+
         li {
             padding-left: 20px;
         }
@@ -22,6 +26,30 @@ export const StyledAccount = styled(Col)`
     }
 
     .account-link {
+        color: #fff;
+        position: relative;
+
+        ::after {
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            width: 0;
+            height: 1px;
+            background-color: ${(props) => props.theme.colors.white};
+            transition: all ease-in-out 0.3s;
+        }
+
+        :hover {
+            color: ${props => props.theme.colors.white};
+
+            ::after {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+        
         span:last-of-type {
             display: none;
         }
@@ -40,7 +68,7 @@ export const StyledLink = styled(Link)`
     font-size: 0.8rem;
 
     div {
-        color: ${({ open }) => (open ? '#fff' : '#111')};
+        color: ${({ open }) => (open ? '#fff' : '#fff')};
         transition: 0.5s color ease-in-out 0.2s;
         font-size: 0.9rem !important;
     }
