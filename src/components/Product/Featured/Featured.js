@@ -43,7 +43,7 @@ export default function Featured() {
             <StyledRow>
               <StyledCol
                 xs={12}
-                md={5}
+                lg={5}
                 data-scroll
                 data-scroll-speed="2"
                 data-scroll-position="top"
@@ -62,7 +62,7 @@ export default function Featured() {
 
               <StyledCol
                 xs={12}
-                md={{ span: 5, offset: 2 }}
+                lg={{ span: 5, offset: 2 }}
                 data-scroll
                 data-scroll-speed="1"
                 data-scroll-position="top"

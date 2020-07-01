@@ -11,7 +11,7 @@ export const FeaturedWrap = styled.div`
     padding-top: 20vh;
     background-color: ${props => props.theme.colors.grey};
 
-    @media screen and (min-width: ${props => props.theme.responsive.medium}) {
+    @media screen and (min-width: ${props => props.theme.responsive.large}) {
         height: 140vh;
     }
 `
@@ -29,7 +29,7 @@ export const StyledRow = styled(Row)`
 export const StyledCol = styled(Col)`
     height: 85vh;
 
-    @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+    @media screen and (max-width: ${props => props.theme.responsive.large}) {
         height: 400px;
     }
 `

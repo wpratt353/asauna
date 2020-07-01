@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import Image from 'gatsby-image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -12,9 +12,17 @@ export default function New() {
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     centerMode: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
 
   return (
@@ -49,13 +57,6 @@ export default function New() {
               }
             }
           }
-          new5: file(relativePath: { eq: "new/5.jpg" }) {
-            childImageSharp {
-              fluid(maxWidth: 950) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
         }
       `}
       render={(data) => (
@@ -74,54 +75,36 @@ export default function New() {
 
           <StyledSlider {...settings}>
             <Slide>
-              <BackgroundImage
+              <Image
                 fadeIn
-                Tag="div"
                 className="new-image"
                 fluid={data.new1.childImageSharp.fluid}
-              >
-                <SlideText>Bedframe</SlideText>
-              </BackgroundImage>
+              />
+              <SlideText>Bedframe</SlideText>
             </Slide>
             <Slide>
-              <BackgroundImage
+              <Image
                 fadeIn
-                Tag="div"
                 className="new-image"
                 fluid={data.new2.childImageSharp.fluid}
-              >
-                <SlideText>Horizon Large Console</SlideText>
-              </BackgroundImage>
+              />
+              <SlideText>Horizon Large Console</SlideText>
             </Slide>
             <Slide>
-              <BackgroundImage
+              <Image
                 fadeIn
-                Tag="div"
                 className="new-image"
                 fluid={data.new3.childImageSharp.fluid}
-              >
-                <SlideText>Lofts & Attics</SlideText>
-              </BackgroundImage>
+              />
+              <SlideText>Lofts & Attics</SlideText>
             </Slide>
             <Slide>
-              <BackgroundImage
+              <Image
                 fadeIn
-                Tag="div"
                 className="new-image"
                 fluid={data.new4.childImageSharp.fluid}
-              >
-                <SlideText>Kitchens</SlideText>
-              </BackgroundImage>
-            </Slide>
-            <Slide>
-              <BackgroundImage
-                fadeIn
-                Tag="div"
-                className="new-image"
-                fluid={data.new5.childImageSharp.fluid}
-              >
-                <SlideText>Cane Sofa 260</SlideText>
-              </BackgroundImage>
+              />
+              <SlideText>Kitchens</SlideText>
             </Slide>
           </StyledSlider>
         </Background>

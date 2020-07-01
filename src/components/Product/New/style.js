@@ -24,7 +24,7 @@ export const Title = styled.h2`
   margin-bottom: 7vh;
   line-height: 1.3;
 
-  @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+  @media screen and (max-width: ${props => props.theme.responsive.large}) {
       width: 98%;
       font-size: ${props => props.theme.fontSize.small};
   }
@@ -58,26 +58,13 @@ export const StyledSlider = styled(Slider)`
             font-size: 40px;
         }
     }
-
-    @media screen and (max-width: ${props => props.theme.responsive.medium}) {
-        .slick-slide {
-            width: 500px !important;
-            height: 250px;
-        }
-    }
 `
 export const Slide = styled.div`
-    .new-image {
-        width: 35vw;
-        height: 50vh;
-        border-right: 30px solid ${(props) => props.theme.colors.yellow};
-        border-left: 30px solid ${(props) => props.theme.colors.yellow};
-        background-color: ${(props) => props.theme.colors.black};
+    position: relative;
 
-        @media screen and (max-width: ${props => props.theme.responsive.medium}) {
-            width: 500px;
-            height: 250px;
-        }
+    .new-image {
+        background-color: ${(props) => props.theme.colors.black};
+        margin: 0 30px;
     }
 `
 export const SlideText = styled.div`
@@ -88,4 +75,11 @@ export const SlideText = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media screen and (max-width: ${props => props.theme.responsive.large}) {
+        font-size: ${props => props.theme.fontSize.small};
+    }
 `
