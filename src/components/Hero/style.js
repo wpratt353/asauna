@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import BackgroundImage from 'gatsby-background-image'
 
 export const PinkBg = styled(motion.div)`
     width: 100vw;
@@ -35,6 +36,13 @@ export const SliderWrap = styled(motion.div)`
             opacity: 1;
         }
     }
+`
+export const StyledBackground = styled(BackgroundImage)`
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 `
 export const Text = styled.div`
     top: 0;

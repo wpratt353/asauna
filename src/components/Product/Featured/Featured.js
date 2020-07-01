@@ -1,29 +1,87 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import { StaticQuery, graphql } from 'gatsby'
 
-import { FeaturedWrap } from "./style"
+import {
+  FeaturedWrap,
+  StyledContainer,
+  StyledRow,
+  StyledCol,
+  StyledBackground,
+  StyledLink,
+  Collection,
+  Name
+} from './style'
 
-const Featured = () => {
-    return (
-      <FeaturedWrap
-        data-scroll
-        data-scroll-speed="1"
-        data-scroll-position="top"
-      >
-        <Container>
-          <Row>
-            <Col xs={12} md={6}>
-              1
-            </Col>
-            <Col xs={12} md={6}>
-              2
-            </Col>
-          </Row>
-        </Container>
-      </FeaturedWrap>
-    )
+export default function Featured() {
+  return (
+    <StaticQuery
+      query={graphql`
+        query Featured {
+          featured1: file(relativePath: { eq: "featured/1.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
+          featured2: file(relativePath: { eq: "featured/2.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid_noBase64
+              }
+            }
+          }
+        }
+      `}
+      render={(data) => (
+        <FeaturedWrap
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-position="top"
+        >
+          <StyledContainer>
+            <StyledRow>
+              <StyledCol
+                xs={12}
+                md={5}
+                data-scroll
+                data-scroll-speed="2"
+                data-scroll-position="top"
+              >
+                <StyledBackground
+                  fadeIn="soft"
+                  Tag="div"
+                  fluid={data.featured1.childImageSharp.fluid}
+                >
+                  <StyledLink to="/">
+                    <Collection>Collection</Collection>
+                    <Name>Cane 210</Name>
+                  </StyledLink>
+                </StyledBackground>
+              </StyledCol>
+
+              <StyledCol
+                xs={12}
+                md={{ span: 5, offset: 2 }}
+                data-scroll
+                data-scroll-speed="1"
+                data-scroll-position="top"
+              >
+                <StyledBackground
+                  fadeIn="soft"
+                  Tag="div"
+                  fluid={data.featured2.childImageSharp.fluid}
+                >
+                  <StyledLink to="/">
+                    <Collection>Collection</Collection>
+                    <Name>Cane 160</Name>
+                  </StyledLink>
+                </StyledBackground>
+              </StyledCol>
+            </StyledRow>
+          </StyledContainer>
+        </FeaturedWrap>
+      )}
+    />
+  )
 }
-
-export default Featured

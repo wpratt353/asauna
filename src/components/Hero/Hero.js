@@ -1,11 +1,10 @@
 import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-import { PinkBg, SliderWrap, Text, Inner, Title, Discover } from './style'
+import { PinkBg, SliderWrap, StyledBackground, Text, Inner, Title, Discover } from './style'
 
 export default function Hero() {
   var settings = {
@@ -84,145 +83,127 @@ export default function Hero() {
           >
             <Slider {...settings}>
               <div>
-                <BackgroundImage
+                <StyledBackground
                   fadeIn
                   Tag="div"
                   className="hero-image"
                   fluid={data.hero3.childImageSharp.fluid}
-                  style={{
-                    width: '100vw',
-                    height: '100vh',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                  }}
-                />
-                <Text>
-                  <Inner>
-                    <Title
-                      animate={{
-                        opacity: ['0%', '100%'],
-                      }}
-                      transition={{
-                        delay: 2,
-                        duration: 0.8,
-                        ease: 'easeInOut',
-                        times: [0, 1],
-                        loop: false,
-                      }}
-                    >
-                      Cane Sofa<sup>210</sup>
-                    </Title>
-                    <Discover
-                      animate={{
-                        opacity: ['0%', '100%'],
-                      }}
-                      transition={{
-                        delay: 2.2,
-                        duration: 0.8,
-                        ease: 'easeInOut',
-                        times: [0, 1],
-                        loop: false,
-                      }}
-                    >
-                      <Link to="/">Discover</Link>
-                    </Discover>
-                  </Inner>
-                </Text>
+                >
+                  <Text>
+                    <Inner>
+                      <Title
+                        animate={{
+                          opacity: ['0%', '100%'],
+                        }}
+                        transition={{
+                          delay: 2,
+                          duration: 0.8,
+                          ease: 'easeInOut',
+                          times: [0, 1],
+                          loop: false,
+                        }}
+                      >
+                        Cane Sofa<sup>210</sup>
+                      </Title>
+                      <Discover
+                        animate={{
+                          opacity: ['0%', '100%'],
+                        }}
+                        transition={{
+                          delay: 2.2,
+                          duration: 0.8,
+                          ease: 'easeInOut',
+                          times: [0, 1],
+                          loop: false,
+                        }}
+                      >
+                        <Link to="/">Discover</Link>
+                      </Discover>
+                    </Inner>
+                  </Text>
+                </StyledBackground>
               </div>
               <div>
-                <BackgroundImage
+                <StyledBackground
                   fadeIn
                   Tag="div"
                   className="hero-image"
                   fluid={data.hero4.childImageSharp.fluid}
-                  style={{
-                    width: '100vw',
-                    height: '100vh',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                  }}
-                />
-                <Text>
-                  <Inner>
-                    <Title
-                      animate={{
-                        opacity: ['0%', '100%'],
-                      }}
-                      transition={{
-                        delay: 2,
-                        duration: 0.8,
-                        ease: 'easeInOut',
-                        times: [0, 1],
-                        loop: false,
-                      }}
-                    >
-                      Cane Sofa<sup>210</sup>
-                    </Title>
-                    <Discover
-                      animate={{
-                        opacity: ['0%', '100%'],
-                      }}
-                      transition={{
-                        delay: 2.2,
-                        duration: 0.8,
-                        ease: 'easeInOut',
-                        times: [0, 1],
-                        loop: false,
-                      }}
-                    >
-                      <Link to="/">Discover</Link>
-                    </Discover>
-                  </Inner>
-                </Text>
+                >
+                  <Text>
+                    <Inner>
+                      <Title
+                        animate={{
+                          opacity: ['0%', '100%'],
+                        }}
+                        transition={{
+                          delay: 2,
+                          duration: 0.8,
+                          ease: 'easeInOut',
+                          times: [0, 1],
+                          loop: false,
+                        }}
+                      >
+                        Cane Sofa<sup>210</sup>
+                      </Title>
+                      <Discover
+                        animate={{
+                          opacity: ['0%', '100%'],
+                        }}
+                        transition={{
+                          delay: 2.2,
+                          duration: 0.8,
+                          ease: 'easeInOut',
+                          times: [0, 1],
+                          loop: false,
+                        }}
+                      >
+                        <Link to="/">Discover</Link>
+                      </Discover>
+                    </Inner>
+                  </Text>
+                </StyledBackground>
               </div>
               <div>
-                <BackgroundImage
+                <StyledBackground
                   fadeIn
                   Tag="div"
                   className="hero-image"
                   fluid={data.hero1.childImageSharp.fluid}
-                  style={{
-                    width: '100vw',
-                    height: '100vh',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center',
-                  }}
-                />
-                <Text>
-                  <Inner>
-                    <Title
-                      animate={{
-                        opacity: ['0%', '100%'],
-                      }}
-                      transition={{
-                        delay: 2,
-                        duration: 0.8,
-                        ease: 'easeInOut',
-                        times: [0, 1],
-                        loop: false,
-                      }}
-                    >
-                      Cane Sofa<sup>210</sup>
-                    </Title>
-                    <Discover
-                      animate={{
-                        opacity: ['0%', '100%'],
-                      }}
-                      transition={{
-                        delay: 2.2,
-                        duration: 0.8,
-                        ease: 'easeInOut',
-                        times: [0, 1],
-                        loop: false,
-                      }}
-                    >
-                      <Link to="/">Discover</Link>
-                    </Discover>
-                  </Inner>
-                </Text>
+                >
+                  <Text>
+                    <Inner>
+                      <Title
+                        animate={{
+                          opacity: ['0%', '100%'],
+                        }}
+                        transition={{
+                          delay: 2,
+                          duration: 0.8,
+                          ease: 'easeInOut',
+                          times: [0, 1],
+                          loop: false,
+                        }}
+                      >
+                        Cane Sofa<sup>210</sup>
+                      </Title>
+                      <Discover
+                        animate={{
+                          opacity: ['0%', '100%'],
+                        }}
+                        transition={{
+                          delay: 2.2,
+                          duration: 0.8,
+                          ease: 'easeInOut',
+                          times: [0, 1],
+                          loop: false,
+                        }}
+                      >
+                        <Link to="/">Discover</Link>
+                      </Discover>
+                    </Inner>
+                  </Text>
+                </StyledBackground>
               </div>
             </Slider>
           </SliderWrap>
