@@ -19,7 +19,8 @@ export const StyledAccount = styled(Col)`
         }
         li:first-of-type {
             display: none;
-            @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+
+            @media screen and (max-width: ${props => props.theme.responsive.large}) {
                 display: inline-block;
             }
         }

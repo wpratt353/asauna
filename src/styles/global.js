@@ -60,10 +60,13 @@ const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => theme.colors.green};
       text-decoration: none;
     }
+  }
 
-    :focus {
-      outline: none;
-      border: none;
+  * {
+    :focus,
+    :active {
+        outline: none;
+        border: none;
     }
   }
 
