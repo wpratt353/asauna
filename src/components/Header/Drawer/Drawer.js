@@ -7,7 +7,7 @@ import { StyledDrawer, StyledUl, StyledLink } from './style'
 const Drawer = ({ open }) => {
   return (
     <StyledDrawer open={open}>
-      <StyledUl>
+      <StyledUl open={open}>
         {links.map((link, index) => {
           return (
             <li key={index}>

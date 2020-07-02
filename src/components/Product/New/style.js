@@ -42,22 +42,26 @@ export const StyledLink = styled(Link)`
   font-weight: 600;
 `
 export const StyledSlider = styled(Slider)`
-    .slick-next {
-        right: 20px;
-    }
-    .slick-prev {
-        left: 20px;
-    }
-    .slick-prev, 
-    .slick-next {
-        z-index: 999;
-        width: 40px;
-        height: 40px;
+  :hover {
+    cursor: grab;
+  }
 
-        ::before {
-            font-size: 40px;
-        }
-    }
+  .slick-next {
+      right: 20px;
+  }
+  .slick-prev {
+      left: 20px;
+  }
+  .slick-prev, 
+  .slick-next {
+      z-index: 999;
+      width: 40px;
+      height: 40px;
+
+      ::before {
+          font-size: 40px;
+      }
+  }
 `
 export const Slide = styled.div`
     position: relative;
@@ -69,7 +73,8 @@ export const Slide = styled.div`
 `
 export const SlideText = styled.div`
     color: ${(props) => props.theme.colors.white};
-    font-size: ${(props) => props.theme.fontSize.medium};
+    font-size: ${(props) => props.theme.fontSize.xmedium};
+    mix-blend-mode: overlay;
     width: 100%;
     height: 100%;
     display: flex;

@@ -9,7 +9,7 @@ import { Background, Text, Title, StyledLink, StyledSlider, Slide, SlideText } f
 export default function New() {
   var settings = {
     dots: false,
-    arrows: true,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
@@ -67,8 +67,8 @@ export default function New() {
         >
           <Text>
             <Title>
-              I have been passionate about <span>creating</span> simple,
-              <span>beautiful,</span> & colorful furniture <span>designs</span>
+              I have been passionate about <span>creating</span> simple,{' '}
+              <span>beautiful</span>, & colorful furniture <span>designs</span>
             </Title>
             <StyledLink to="/">Discover our history</StyledLink>
           </Text>
@@ -88,7 +88,7 @@ export default function New() {
                 className="new-image"
                 fluid={data.new2.childImageSharp.fluid}
               />
-              <SlideText>Horizon Large Console</SlideText>
+              <SlideText>Consoles</SlideText>
             </Slide>
             <Slide>
               <Image
@@ -96,7 +96,7 @@ export default function New() {
                 className="new-image"
                 fluid={data.new3.childImageSharp.fluid}
               />
-              <SlideText>Lofts & Attics</SlideText>
+              <SlideText>Lofts</SlideText>
             </Slide>
             <Slide>
               <Image

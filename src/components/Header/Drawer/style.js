@@ -9,7 +9,7 @@ export const StyledDrawer = styled.div`
     top: 0;
     left: 0;
     z-index: 98;
-    transform: ${({ open }) => (open ? 'translateY(0)' : 'translateY(-100%)')};
+    transform: ${({ open }) => (open ? 'translateY(0%)' : 'translateY(-100%)')};
     transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
     transform-origin: top;
     display: flex;
@@ -20,6 +20,8 @@ export const StyledDrawer = styled.div`
 export const StyledUl = styled.ul`
     width: 100%;
     text-align: center;
+    opacity: ${({ open }) => (open ? '100%' : '0%')};
+    transition: opacity 2.5s cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
 `
 export const StyledLink = styled(Link)`
     font-size: ${props => props.theme.fontSize.medium};
