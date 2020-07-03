@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 import locomotiveScroll from 'locomotive-scroll'
 import Container from 'react-bootstrap/Container'
@@ -11,9 +11,52 @@ import Hero from '../components/Hero'
 import Featured from '../components/Product/Featured'
 import New from '../components/Product/New'
 import Product from '../components/Product'
+import Banner from '../components/Banner'
 
+export const ProductWrap = styled.div`
+  width: 100%;
+  padding: 28vh 0 10vh;
+  background-color: ${(props) => props.theme.colors.white};
+`
 const StyledContainer = styled(Container)`
-  
+  width: ${(props) => props.theme.sizes.maxWidthMedium};
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: ${props => props.theme.responsive.large}) {
+    width: 100%;
+  }
+`
+const StyledRow = styled(Row)`
+  width: 100%;
+`
+const Title = styled.h5`
+  text-align: center;
+  margin: 0 0 16vh;
+  font-family: ${props => props.theme.fonts.sans};
+  font-size: 1.2rem;
+`
+const StyledLink = styled(Link)`
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  padding: 9vh 0 0;
+  font-size: ${props => props.theme.fontSize.xsmall};
+  font-weight: 600;
+  position: relative;
+  width: 130px;
+
+  ::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: ${props => props.theme.colors.black};
+    transition: all ease-in-out 0.3s;
+  }
 `
 
 const IndexPage = ({ data }) => {
@@ -30,29 +73,37 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Home" />
-      <Header />
       <div className="scroll" ref={scrollRef}>
+        <Header />
         <Hero />
         <Featured />
         <New />
-        <StyledContainer>
-          <Row>
-            {edges.map(({ node }) => {
-              const { id, excerpt, frontmatter } = node
-              const { cover, path, title, date } = frontmatter
-              return (
-                <Product
-                  key={id}
-                  cover={cover.childImageSharp.fluid}
-                  path={path}
-                  title={title}
-                  date={date}
-                  excerpt={excerpt}
-                />
-              )
-            })}
-          </Row>
-        </StyledContainer>
+        <ProductWrap
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-position="top"
+        >
+          <Title>Our must-haves</Title>
+          <StyledContainer fluid>
+            <StyledRow>
+              {edges.map(({ node }) => {
+                const { id, frontmatter } = node
+                const { cover, path, title, date } = frontmatter
+                return (
+                  <Product
+                    key={id}
+                    cover={cover.childImageSharp.fluid}
+                    path={path}
+                    title={title}
+                    date={date}
+                  />
+                )
+              })}
+            </StyledRow>
+          </StyledContainer>
+          <StyledLink to="/">All our products</StyledLink>
+        </ProductWrap>
+        <Banner />
       </div>
     </>
   )
@@ -62,12 +113,11 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       limit: 6
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
           id
-          excerpt(pruneLength: 75)
           frontmatter {
             title
             path
@@ -78,7 +128,7 @@ export const query = graphql`
                 fluid(
                   maxWidth: 1000
                   quality: 90
-                  traceSVG: { color: "#2B2B2F" }
+                  traceSVG: { color: "#f2f2f2" }
                 ) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }

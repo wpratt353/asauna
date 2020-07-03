@@ -1,37 +1,38 @@
 import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
 import { Link } from 'gatsby'
 
-export const Background = styled.div`
+export const StyledBackground = styled(BackgroundImage)`
     width: 100vw;
-    padding: 30vh;
-    background-color: ${props => props.theme.colors.yellow};
-`
-export const Text = styled.div`
+    height: 110vh;
+    margin: 15vh 0 0;
+    position: relative;
     display: flex;
     justify-content: center;
-    width: 100%;
+    align-items: center;
     flex-direction: column;
-    text-align: center;
+    background-color: ${props => props.theme.colors.green};
 `
-export const Title = styled.h2`
-    width: ${props => props.theme.sizes.maxWidthSmall};
-    color: ${props => props.theme.colors.white};
-    margin: 0 auto;
-    font-family: ${props => props.theme.fonts.sans};
-    text-align: center;
-    font-size: ${props => props.theme.fontSize.xmedium};
-    margin-bottom: 7vh;
-    line-height: 1.3;
-
-    span {
-        font-family: ${props => props.theme.fonts.serif};
-    }
+export const Title = styled.p`
+    font-size: ${props => props.theme.fontSize.large};
+    color: ${props => props.theme.colors.green};
+    margin: 0 0 5vh;
 `
 export const StyledLink = styled(Link)`
-    margin-bottom: 10vh;
-    text-transform: uppercase;
-    display: inline-block;
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontSize.xxsmall};
+    display: block;
+    text-align: center;
+    color: ${props => props.theme.colors.green};
     font-weight: 600;
+    width: 110px;
+    position: relative;
+
+    ::after {
+        content: ' ';
+        background-color: ${props => props.theme.colors.green};
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
 `
