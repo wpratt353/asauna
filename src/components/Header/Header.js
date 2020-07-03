@@ -11,7 +11,12 @@ const Header = () => {
 
     return (
       <>
-        <HeaderWrap fluid>
+        <HeaderWrap
+          fluid
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-position="top"
+        >
           <Animation
             animate={{
               opacity: ['0%', '100%'],
