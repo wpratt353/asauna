@@ -5,7 +5,6 @@ import { Link } from 'gatsby'
 export const StyledBackground = styled(BackgroundImage)`
     width: 100vw;
     height: 110vh;
-    margin: 15vh 0 0;
     position: relative;
     display: flex;
     justify-content: center;
