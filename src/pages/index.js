@@ -12,10 +12,11 @@ import Featured from '../components/Product/Featured'
 import New from '../components/Product/New'
 import Product from '../components/Product'
 import Banner from '../components/Banner'
+import Spacer from '../components/Spacer'
 
 export const ProductWrap = styled.div`
   width: 100%;
-  padding: 28vh 0 10vh;
+  padding: 28vh 0 25vh;
   background-color: ${(props) => props.theme.colors.white};
 `
 const StyledContainer = styled(Container)`
@@ -71,41 +72,36 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <>
+    <div className="scroll" ref={scrollRef}>
       <SEO title="Home" />
-      <div className="scroll" ref={scrollRef}>
-        <Header />
-        <Hero />
-        <Featured />
-        <New />
-        <ProductWrap
-          data-scroll
-          data-scroll-speed="1"
-          data-scroll-position="top"
-        >
-          <Title>Our must-haves</Title>
-          <StyledContainer fluid>
-            <StyledRow>
-              {edges.map(({ node }) => {
-                const { id, frontmatter } = node
-                const { cover, path, title, date } = frontmatter
-                return (
-                  <Product
-                    key={id}
-                    cover={cover.childImageSharp.fluid}
-                    path={path}
-                    title={title}
-                    date={date}
-                  />
-                )
-              })}
-            </StyledRow>
-          </StyledContainer>
-          <StyledLink to="/">All our products</StyledLink>
-        </ProductWrap>
-        <Banner />
-      </div>
-    </>
+      <Header />
+      <Hero />
+      <Featured />
+      <New />
+      <ProductWrap data-scroll data-scroll-speed="1" data-scroll-position="top">
+        <Title>Our must-haves</Title>
+        <StyledContainer fluid>
+          <StyledRow>
+            {edges.map(({ node }) => {
+              const { id, frontmatter } = node
+              const { cover, path, title, date } = frontmatter
+              return (
+                <Product
+                  key={id}
+                  cover={cover.childImageSharp.fluid}
+                  path={path}
+                  title={title}
+                  date={date}
+                />
+              )
+            })}
+          </StyledRow>
+        </StyledContainer>
+        <StyledLink to="/">All our products</StyledLink>
+      </ProductWrap>
+      <Banner />
+      <Spacer />
+    </div>
   )
 }
 
