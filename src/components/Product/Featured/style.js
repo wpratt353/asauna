@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Modal from 'react-bootstrap/Modal'
 
 export const FeaturedWrap = styled.div`
     position: relative;
@@ -42,7 +42,7 @@ export const StyledBackground = styled(BackgroundImage)`
     transition: all ease-in-out 0.5s;
     background-color: ${props => props.theme.colors.green};
 `
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.div`
     display: block;
     width: 100%;
     height: 100%;
@@ -56,6 +56,7 @@ export const StyledLink = styled(Link)`
 
     :hover {
         color: ${props => props.theme.colors.white};
+        cursor: pointer;
     }
 `
 export const Collection = styled.div`
@@ -64,4 +65,28 @@ export const Collection = styled.div`
 export const Name = styled.div`
     font-size: ${props => props.theme.fontSize.large};
     letter-spacing: -1px;
+`
+export const StyledModal = styled(Modal)`
+    display: flex !important;
+    align-items: center !important;
+    
+    .modal-content {
+        border-radius: 0;
+        width: 50vw;
+        left: -10vw;
+        background-color: ${props => props.theme.colors.smoke};
+
+        @media screen and (max-width: ${props => props.theme.responsive.large}) {
+            width: 90vw;
+            left: -15vw;
+        }
+        @media screen and (max-width: ${props => props.theme.responsive.medium}) {
+            width: auto;
+            left: auto;
+        }
+    }
+    .modal-body {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 `

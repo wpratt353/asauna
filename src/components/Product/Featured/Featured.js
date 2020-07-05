@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
+import Popup from '../../Popup'
 import {
   FeaturedWrap,
   StyledContainer,
@@ -9,10 +10,16 @@ import {
   StyledBackground,
   StyledLink,
   Collection,
-  Name
+  Name,
+  StyledModal,
 } from './style'
 
 export default function Featured() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <StaticQuery
       query={graphql`
@@ -34,53 +41,59 @@ export default function Featured() {
         }
       `}
       render={(data) => (
-        <FeaturedWrap
-          data-scroll
-          data-scroll-speed="1"
-          data-scroll-position="top"
-        >
-          <StyledContainer>
-            <StyledRow>
-              <StyledCol
-                xs={12}
-                lg={5}
-                data-scroll
-                data-scroll-speed="2"
-                data-scroll-position="top"
-              >
-                <StyledBackground
-                  fadeIn="soft"
-                  Tag="div"
-                  fluid={data.featured1.childImageSharp.fluid}
+        <>
+          <FeaturedWrap
+            data-scroll
+            data-scroll-speed="1"
+            data-scroll-position="top"
+          >
+            <StyledContainer>
+              <StyledRow>
+                <StyledCol
+                  xs={12}
+                  lg={5}
+                  data-scroll
+                  data-scroll-speed="2"
+                  data-scroll-position="top"
                 >
-                  <StyledLink to="/">
-                    <Collection>Collection</Collection>
-                    <Name>Cane 210</Name>
-                  </StyledLink>
-                </StyledBackground>
-              </StyledCol>
+                  <StyledBackground
+                    fadeIn="soft"
+                    Tag="div"
+                    fluid={data.featured1.childImageSharp.fluid}
+                  >
+                    <StyledLink onClick={handleShow}>
+                      <Collection>Collection</Collection>
+                      <Name>Cane 210</Name>
+                    </StyledLink>
+                  </StyledBackground>
+                </StyledCol>
 
-              <StyledCol
-                xs={12}
-                lg={{ span: 5, offset: 2 }}
-                data-scroll
-                data-scroll-speed="1"
-                data-scroll-position="top"
-              >
-                <StyledBackground
-                  fadeIn="soft"
-                  Tag="div"
-                  fluid={data.featured2.childImageSharp.fluid}
+                <StyledCol
+                  xs={12}
+                  lg={{ span: 5, offset: 2 }}
+                  data-scroll
+                  data-scroll-speed="1"
+                  data-scroll-position="top"
                 >
-                  <StyledLink to="/">
-                    <Collection>Collection</Collection>
-                    <Name>Cane 160</Name>
-                  </StyledLink>
-                </StyledBackground>
-              </StyledCol>
-            </StyledRow>
-          </StyledContainer>
-        </FeaturedWrap>
+                  <StyledBackground
+                    fadeIn="soft"
+                    Tag="div"
+                    fluid={data.featured2.childImageSharp.fluid}
+                  >
+                    <StyledLink onClick={handleShow}>
+                      <Collection>Collection</Collection>
+                      <Name>Cane 160</Name>
+                    </StyledLink>
+                  </StyledBackground>
+                </StyledCol>
+              </StyledRow>
+            </StyledContainer>
+          </FeaturedWrap>
+
+          <StyledModal show={show} onHide={handleClose}>
+            <Popup />
+          </StyledModal>
+        </>
       )}
     />
   )
