@@ -62,6 +62,10 @@ export const StyledSlider = styled(Slider)`
           font-size: 40px;
       }
   }
+
+  .new-image picture {
+    opacity: 0.9;
+  }
 `
 export const Slide = styled.div`
     position: relative;
@@ -74,7 +78,6 @@ export const Slide = styled.div`
 export const SlideText = styled.div`
     color: ${(props) => props.theme.colors.white};
     font-size: ${(props) => props.theme.fontSize.xmedium};
-    mix-blend-mode: overlay;
     width: 100%;
     height: 100%;
     display: flex;
